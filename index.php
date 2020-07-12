@@ -11,14 +11,7 @@ if (isset($_POST['branch'])){
         "title"=>$_POST['c_title'],
         "desc"=>$_POST['c_desc'],
     ];
-   return 1;
 }
-
-//$fp = fopen("cert.jpg", 'rb');
-// send the right headers
-//header("Content-Type: image/png");
-// dump the picture and stop the script
-//fpassthru($fp);
 ?>
 <!doctype html>
 <html lang="en">
