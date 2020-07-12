@@ -10,6 +10,7 @@ if (isset($_POST['branch'])){
         "name"=>$_POST['c_name'],
         "title"=>$_POST['c_title'],
         "desc"=>$_POST['c_desc'],
+        "lead_sig"=>$_POST['lead'],
     ];
     makeCert($data);
 }
@@ -72,13 +73,21 @@ if (isset($_POST['branch'])){
                     <div class="form-group">
                         <label for="temp">Choose Template</label>
                         <div class="templates">
-                            <div class="temp">
+                            <div class="temp mb-2">
                                 <div class="icon">
                                     <span class="mdi mdi-check-circle"></span>
                                 </div>
                                 <img style="width: 100%;height: 100%;" src="ex/t1.png" alt="">
                                 <input required class="radio" type="radio" name="temp" value="1">
                             </div>
+                            <div class="temp">
+                                <div class="icon">
+                                    <span class="mdi mdi-check-circle"></span>
+                                </div>
+                                <img style="width: 100%;height: 100%;" src="ex/t2.jpg" alt="">
+                                <input required class="radio" type="radio" name="temp" value="2">
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -102,6 +111,12 @@ if (isset($_POST['branch'])){
                         <input required placeholder="Description " class="form-control"
                                id="desc" type="text" name="c_desc">
                     </div>
+                    <div class="form-group">
+                        <label for="lead">Leader Name (Optional)</label>
+                        <input placeholder="Leader name for signature " class="form-control"
+                               id="lead" type="text" name="lead">
+                    </div>
+
                     <div class="form-group mt-2">
                         <button class="btn btn-primary">Generate</button>
                     </div>
