@@ -73,7 +73,7 @@ function makeCert($data) {
 
     }
 
-    //header('Content-Disposition: attachment; filename="'.$data['name'].'.png"');
+    header('Content-Disposition: attachment; filename="'.$data['name'].'.png"');
     echo $img->response('png', 100);
     return true;
 }
