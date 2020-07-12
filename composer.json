@@ -1,6 +1,5 @@
 {
     "require": {
-        "mpdf/mpdf": "^8.0",
         "intervention/image": "^2.5",
         "google/recaptcha": "^1.2"
     }
