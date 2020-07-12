@@ -11,6 +11,7 @@ if (isset($_POST['branch'])){
         "title"=>$_POST['c_title'],
         "desc"=>$_POST['c_desc'],
     ];
+    makeCert($data);
 }
 ?>
 <!doctype html>
