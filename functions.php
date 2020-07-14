@@ -10,16 +10,35 @@ function makeCert($data) {
     $c_name = $data['name'];
     $c_text = $data['desc'];
     $temp1 = $temps[$data['temp']];
-    // Branch Text
-    $img->text($branch,
-        $temp1['branch']['x'],
-        $temp1['branch']['y'],
-        function ($font) use ($temp1) {
-            $font->file($temp1['branch']['f']);
-            $font->size($temp1['branch']['s']);
-            $font->color($temp1['branch']['c']);
-            $font->align($temp1['branch']['a']);
-        });
+
+    if (!$temp1['branch']['full_name']){
+        // Branch Text
+        $img->text($branch,
+            $temp1['branch']['x'],
+            $temp1['branch']['y'],
+            function ($font) use ($temp1) {
+                $font->file($temp1['branch']['f']);
+                $font->size($temp1['branch']['s']);
+                $font->color($temp1['branch']['c']);
+                $font->align($temp1['branch']['a']);
+            });
+    } else {
+        $center_y = $temp1['branch']['y'];
+        $max_len = $temp1['branch']['max_len'] ?? 23;
+        $font_size = $temp1['branch']['s'];
+        $font_height = 25;
+        $lines = explode("\n", wordwrap("Developer Student Clubs ".$branch, $max_len));
+        $y = $center_y - ((count($lines) - 1) * $font_height);
+        foreach ($lines as $line) {
+            $img->text($line, $temp1['branch']['x'], $y, function ($font) use ($font_size,$temp1) {
+                $font->size($temp1['branch']['s']);
+                $font->color($temp1['branch']['c']);
+                $font->align($temp1['branch']['a']);
+                $font->file($temp1['branch']['f']);
+            });
+            $y += $font_height * 2;
+        }
+    }
 
     // Certificate Title
     $img->text($c_title,
@@ -43,6 +62,8 @@ function makeCert($data) {
     $max_len = $temp1['desc']['max_len'] ?? '46';
     $font_size = $temp1['desc']['s'];
     $font_height = 25;
+    if (isset($temp1['desc']['x']))
+        $center_x = $temp1['desc']['x'];
     $lines = explode("\n", wordwrap($c_text, $max_len));
     $y = $center_y - ((count($lines) - 1) * $font_height);
     foreach ($lines as $line) {
@@ -63,6 +84,8 @@ function makeCert($data) {
                 $font->align($temp1['sig']['a']);
                 $font->file($temp1['sig']['f']);
             });
+        if ($temp1['branch']['full_name'])
+            $branch = "DSC ".$branch;
         $img->text(strtoupper($branch)." LEADER",
             $temp1['sig_r']['x'], $temp1['sig_r']['y'], function ($font) use ($temp1) {
                 $font->size($temp1['sig_r']['s']);
@@ -76,4 +99,20 @@ function makeCert($data) {
     header('Content-Disposition: attachment; filename="'.$data['name'].'.png"');
     echo $img->response('png', 100);
     return true;
+}
+function viewHome(){
+    return require_once 'views/home.php';
+}
+function postCert(){
+    if (isset($_POST['branch'])){
+        $data = [
+            "temp"=>"t".$_POST['temp'],
+            "branch"=>$_POST['branch'],
+            "name"=>$_POST['c_name'],
+            "title"=>$_POST['c_title'],
+            "desc"=>$_POST['c_desc'],
+            "lead_sig"=>$_POST['lead'],
+        ];
+        makeCert($data);
+    }
 }

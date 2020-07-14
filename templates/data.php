@@ -34,7 +34,59 @@ $temp1 = [
     ],
     "have_sig"=>false,
 ];
-
+$temp3 = [
+    "branch" => [
+        "x" => 1235,
+        "y" => 360,
+        "s" => 35,
+        "a"=>"center",
+        "c"=>"#000",
+        "f"=>"fonts/os/OpenSans-Light.ttf",
+        "full_name"=>true,
+    ],
+    "title" => [
+        "a"=>"center",
+        "x" => 1300,
+        "y" => 550,
+        "s" => 62,
+        "c"=>"#7e6b73",
+        "f" => "fonts/os/OpenSans-SemiBold.ttf"
+    ],
+    "name" => [
+        "x" => 1300,
+        "y" => 680,
+        "s" => 92,
+        "f" => "fonts/os/OpenSans-Bold.ttf",
+        "a"=>"center",
+        "c" => "#eb4234"
+    ],
+    "desc" => [
+        "y" => 100,
+        "x" => 1300,
+        "max_len"=>35,
+        "s" => 50,
+        "c"=>"#333",
+        "f" => "fonts/os/OpenSans-Regular.ttf",
+        "a"=>"center",
+    ],
+    "have_sig"=>true,
+    "sig"=>[
+        "x" => 1550,
+        "y" => 1185,
+        "s" => 38,
+        "f" => "fonts/ad/ArchitectsDaughter.ttf",
+        "a"=>"center",
+        "c" => "#333"
+    ],
+    "sig_r"=>[
+        "x" => 1550,
+        "y" => 1245,
+        "s" => 32,
+        "c" => "#eb4234",
+        "f" => "fonts/os/OpenSans-SemiBold.ttf",
+        "a"=>"center",
+    ]
+];
 return [
     "t1" => $temp1,
     "t2" => [
@@ -87,5 +139,6 @@ return [
             "f" => "fonts/os/OpenSans-Bold.ttf",
             "a"=>"center",
         ]
-    ]
+    ],
+    "t3" => $temp3,
 ];
