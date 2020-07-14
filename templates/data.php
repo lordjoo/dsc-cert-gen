@@ -33,6 +33,14 @@ $temp1 = [
         "max_len"=>67,
     ],
     "have_sig"=>false,
+    "date"=> [
+        "x" => 1000,
+        "y" => 1400,
+        "s" => 32,
+        "c"=>"#000",
+        "f" => "fonts/os/OpenSans-Regular.ttf",
+        "a"=>"center",
+    ]
 ];
 $temp3 = [
     "branch" => [
@@ -85,11 +93,27 @@ $temp3 = [
         "c" => "#eb4234",
         "f" => "fonts/os/OpenSans-SemiBold.ttf",
         "a"=>"center",
-    ]
+    ],
+    "date"=> [
+        "x" => 450,
+        "y" => 1320,
+        "s" => 32,
+        "c"=>"#000",
+        "f" => "fonts/os/OpenSans-Regular.ttf",
+        "a"=>"center",
+    ],
 ];
 return [
     "t1" => $temp1,
     "t2" => [
+        "date"=> [
+            "x" => 400,
+            "y" => 1400,
+            "s" => 32,
+            "c"=>"#000",
+            "f" => "fonts/os/OpenSans-Regular.ttf",
+            "a"=>"center",
+        ],
         "branch" => [
                 "x" => 1000,
                 "y" => 300,

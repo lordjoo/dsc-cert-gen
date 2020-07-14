@@ -58,6 +58,18 @@ function makeCert($data) {
             $font->file($temp1['name']['f']);
         });
 
+        
+    // Certificate Date
+    $img->text('Issued at '.date('d,M Y'),
+    $temp1['date']['x'], $temp1['date']['y'], function ($font) use ($temp1) {
+        $font->size($temp1['date']['s']);
+        $font->color($temp1['date']['c']);
+        $font->align($temp1['date']['a']);
+        $font->file($temp1['date']['f']);
+    });
+    
+
+    // Certificate Info
     $center_y = ($img->height() / 2) + $temp1['desc']['y'];
     $max_len = $temp1['desc']['max_len'] ?? '46';
     $font_size = $temp1['desc']['s'];
