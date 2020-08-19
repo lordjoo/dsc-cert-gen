@@ -7,7 +7,7 @@
                 <h3 class="mb-2">Create Certificates For Your Team</h3>
             </div>
             <div class="col-md-8 m-auto text-center">
-                <img class="m-auto" style="width: 450px" src="/ex/ctm.png" alt="">
+                <img class="m-auto img-thumbnail" style="width: 450px" src="/ex/ctm.png" alt="">
             </div>
         </div>
         <hr>
