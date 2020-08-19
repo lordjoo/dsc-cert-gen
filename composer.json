@@ -2,5 +2,10 @@
     "require": {
         "intervention/image": "^2.5",
         "google/recaptcha": "^1.2"
+    },
+    "autoload": {
+        "classmap": [
+            "lib"
+        ]
     }
 }

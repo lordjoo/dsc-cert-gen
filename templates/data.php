@@ -165,4 +165,38 @@ return [
         ]
     ],
     "t3" => $temp3,
+    "ct" => [
+        "name" => [
+            "x" => 145,
+            "y" => 255,
+            "s" => 25,
+            "f" => "fonts/roboto/Roboto-Regular.ttf",
+            "c" => "#333"
+        ],
+        "desc" => [
+            "y" => 30,
+            "x"=>145,
+            "s" => 15,
+            "max_len"=>73,
+            "font_height"=>10,
+            "c"=>"#333",
+            "f" => "fonts/os/OpenSans-Regular.ttf",
+            //"a"=>"center",
+        ],
+        "have_sig"=>true,
+        "sig"=>[
+            "x" => 155,
+            "y" => 388,
+            "s" => 25,
+            "f" => "fonts/sig.ttf",
+            "c" => "#333"
+        ],
+        "sig_r"=>[
+            "x" => 145,
+            "y" => 432,
+            "s" => 13,
+            "c"=>"#333",
+            "f" => "fonts/roboto/Roboto-Regular.ttf",
+        ]
+    ],
 ];

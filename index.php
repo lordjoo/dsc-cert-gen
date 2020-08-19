@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+ob_flush();
 require "vendor/autoload.php";
 require 'functions.php';
 $routes = require_once 'routes.php';

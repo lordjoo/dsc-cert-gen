@@ -49,3 +49,7 @@
     color: #27ae60;
     font-size: 35px;
 }
+
+*{
+    font-family: 'Lato', sans-serif !important;
+}
