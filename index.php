@@ -1,17 +1,20 @@
 <?php
-session_start();
 ob_flush();
+session_start();
+
+// requiring the libraries we need
 require "vendor/autoload.php";
-require 'functions.php';
-$routes = require_once 'routes.php';
+require 'bootstrap.php';
 
-//$result_key = array_search([ 'url' => '/','method' => 'post'],array_column($routes,['url','method']));
-//var_dump($result_key);
-$res = array_values(array_filter($routes,function ($e){
-    return ($e['url']==$_SERVER['REQUEST_URI'] && $e['method']==strtolower($_SERVER['REQUEST_METHOD']));
-}));
-if (count($res)==0)
-    return require_once 'views/404.php';
-$res[0]['call']();
+// init the error handler
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 
+// auto registering the controller classes
+spl_autoload_register(function ($name) {
+    if (file_exists("app/controllers/$name.php"))
+        require "app/controllers/$name.php";
+});
 
+startApp();

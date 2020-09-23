@@ -1,5 +1,5 @@
 <?php
-namespace lib;
+namespace App\lib;
 
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -7,7 +7,7 @@ class CertMaker
 {
 
     public static function normal($data) {
-        $temps = include "templates/data.php";
+        $temps = require __DIR__ . "/../../templates/data.php";
         $img = Image::make('templates/'.$data['temp'].'.png');
         $center_x = $img->width() / 2;
         $branch = $data['branch'];
@@ -15,7 +15,6 @@ class CertMaker
         $c_name = $data['name'];
         $c_text = $data['desc'];
         $temp1 = $temps[$data['temp']];
-
         if (!$temp1['branch']['full_name']){
             // Branch Text
             $img->text($branch,
@@ -121,8 +120,8 @@ class CertMaker
 
 
     public static function coreTeam($data) {
-        $temps = require __DIR__."/../templates/data.php";
-        $img = Image::make(__DIR__.'/../templates/'.$data['temp'].'.png');
+        $temps = require __DIR__ . "/../../templates/data.php";
+        $img = Image::make(__DIR__ . '/../templates/' .$data['temp'].'.png');
         $center_x = $img->width() / 2;
         $univ = $data['univ'];
         $name = $data['name'];

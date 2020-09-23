@@ -4,32 +4,41 @@ return [
     [
         "url"=>"/",
         "method"=>"get",
-        "call"=>"viewHome",
+        "call"=>"PagesController@home",
     ],
     [
         "url"=>"/",
         "method"=>"post",
-        "call"=>"postCert",
+        "call"=>"CertificateController@postCert",
     ],
     [
         "url"=>"/ct19",
         "method"=>"get",
-        "call"=>"coreTeamPage",
+        "call"=>"PagesController@maintain",
     ],
     [
         "url"=>"/ct19",
         "method"=>"post",
-        "call"=>"makeCT",
+        "call"=>"PagesController@maintain",
+//        "call"=>"makeCT",
     ],
     [
         "url"=>"/ct19/lg",
         "method"=>"get",
-        "call"=>"logLeadPage",
+        "call"=>"PagesController@maintain",
+//        "call"=>"logLeadPage",
     ],
     [
         "url"=>"/ct19/lg",
         "method"=>"post",
-        "call"=>"leadLogin",
+        "call"=>"PagesController@maintain",
+//        "call"=>"leadLogin",
+    ],
+    [
+        "url"=>"/lead",
+        "method"=>"get",
+        "call"=>"PagesController@maintain",
+//        "call"=>"leadLogin",
     ],
 
 

@@ -5,8 +5,9 @@
 .temp {
     transition: all 0.2s ease-in-out;
     border: 2px solid #333;
-    width: 250px;
-    height: 170px;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
 }
@@ -16,6 +17,7 @@
     height: 100%;
     width: 100%;
     z-index: 50;
+    top: 0;
     left: 0;
     right: 0;
     opacity: 0;
@@ -52,4 +54,7 @@
 
 *{
     font-family: 'Lato', sans-serif !important;
+}
+.slick-prev:before, .slick-next:before {
+    color: #495057 !important;
 }

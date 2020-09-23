@@ -13,6 +13,7 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
     </include_path>
   </component>
 </project>

@@ -1,21 +1,7 @@
 <?php
 
-
 use lib\CertMaker;
 
-function postCert(){
-    if (isset($_POST['branch'])){
-        $data = [
-            "temp"=>"t".$_POST['temp'],
-            "branch"=>$_POST['branch'],
-            "name"=>$_POST['c_name'],
-            "title"=>$_POST['c_title'],
-            "desc"=>$_POST['c_desc'],
-            "lead_sig"=>$_POST['lead'],
-        ];
-        CertMaker::normal($data);
-    }
-}
 function makeCT(){
     $pass = require_once "config.php";
     if (!isset($_SESSION['leadLogin']) && !password_verify($_SESSION['leadLogin'],$pass['pass'])){
@@ -63,3 +49,4 @@ function leadLogin(){
         echo "Invalid Request";
     }
 }
+

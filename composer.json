@@ -1,11 +1,15 @@
 {
     "require": {
         "intervention/image": "^2.5",
-        "google/recaptcha": "^1.2"
+        "google/recaptcha": "^1.2",
+        "filp/whoops": "^2.7"
     },
     "autoload": {
         "classmap": [
-            "lib"
+            "app/lib"
+        ],
+        "files": [
+            "app/helpers.php"
         ]
     }
 }
